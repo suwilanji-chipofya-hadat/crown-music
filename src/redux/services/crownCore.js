@@ -1,6 +1,6 @@
 import { createApi } from '@reduxjs/toolkit/query/react';
 import { supabase } from '../../lib/supabaseClient'
-const shazamCoreApi = createApi({
+const crownCoreApi = createApi({
   reducerPath: 'crownCoreApi',
   baseQuery: async ({ queryFn, json }) => {
     const { data, error } = await queryFn();
@@ -56,6 +56,6 @@ export const {
   useGetArtistDetailsQuery,
   useGetSongDetailsQuery,
   useGetSongRelatedQuery,
-} = shazamCoreApi;
+} = crownCoreApi;
 
-export { shazamCoreApi };
+export { crownCoreApi };
