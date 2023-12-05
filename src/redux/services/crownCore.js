@@ -2,8 +2,8 @@ import { createApi } from '@reduxjs/toolkit/query/react';
 import { supabase } from '../../lib/supabaseClient'
 const crownCoreApi = createApi({
   reducerPath: 'crownCoreApi',
-  baseQuery: async ({ queryFn, json }) => async (args) {
-    const { data, error } = await queryFn(args);
+  baseQuery: async (arg, api, { queryFn, json }) => {
+    const { data, error } = await queryFn(api, arg);
 
     if (error) {
       throw error;
